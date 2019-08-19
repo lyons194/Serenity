@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
-#Be sure to set up a virtual environment during the set up.
+#Be sure to set up a virtual environment during the set up.  Import virtualenv?
 
 #Functional variables
 running = True

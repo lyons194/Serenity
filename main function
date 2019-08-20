@@ -63,3 +63,61 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+
+#Import modules
+
+from bs4 import BeautifulSoup
+import requests
+import time
+#Be sure to set up a virtual environment during the set up.  Import virtualenv?
+
+#Functional variables
+running = True
+
+#stylistic variables
+
+n = '\n'
+s = '     '
+line = '____________________'
+
+class o:
+    pass
+
+def init_check(x):
+    r = requests.get(f'{x}+/robots.txt')
+    data = r.text
+    soup = BeautifulSoup(data)
+    result = soup.find_all
+    print(result)
+
+def main():
+    while running:
+        print(f'{n}WEB SCRAPER{n}')
+        time.sleep(1)
+        a = input('Scrape?  ')
+        if a == 'y':
+            time.sleep(1)
+            print(f'{n}{n}')
+            b = input(f'Please enter your URL below.{n*2}URL:  ')
+            re = requests.get(f'https://{b}/robots.txt')
+            data = re.text
+            soup = BeautifulSoup(data, features='lxml')
+            result = soup.find_all
+            print(f'{n*5}ROBOTS.TXT PRE-CHECK.{n}{line}{n*5}{result}{n*2}{line}{n*2}')
+            c = input('Continue?  ')
+            if c == 'y':
+                pass
+            elif c == 'n':
+                pass
+
+        elif a == 'n':
+            time.sleep(1)
+            break
+
+#Thought:  use the 'try' function for the robots.txt request function.
+
+if __name__ == '__main__':
+    main()

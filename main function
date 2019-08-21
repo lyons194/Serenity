@@ -4,23 +4,33 @@
 #LAST UPDATED:  August 20, 2019.
 
 
-#Import modules
+#Begin import modules section.
 
 from bs4 import BeautifulSoup
 import requests
 import time
 #Be sure to set up a virtual environment during the set up.  Import virtualenv?
 
-#Functional variables
+#End import modules section.
+
+
+#Begin functional variables section.
+
 running = True
 
-#stylistic variables
+#Begin functional variables section.
+
+
+#Begin stylistic variables section.
 
 n = '\n'
 s = '     '
 line = '____________________'
 
+#End stylistic variables section.
 
+
+#Begin function definition section.
 
 class o:
     pass
@@ -56,6 +66,13 @@ def main():
 
 #Thought:  use the 'try' function for the robots.txt request function.
 
+#End function definition section.
+
+
+#Begin main().
+
 if __name__ == '__main__':
     title()
     main()
+
+#End main()

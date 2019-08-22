@@ -1,25 +1,24 @@
 #NAME: Wishing Well - a web scraping program. 
 #LANGUAGE:  Python
 #CREATED BY: Sean Lyons
-#LAST UPDATED:  August 20, 2019.
+#LAST UPDATED:  August 21, 2019.
 
 
 #Begin import modules section.
 
 from bs4 import BeautifulSoup
 import requests
+from lxml import html
 import time
 #Be sure to set up a virtual environment during the set up.  Import virtualenv?
 
 #End import modules section.
-
 
 #Begin functional variables section.
 
 running = True
 
 #Begin functional variables section.
-
 
 #Begin stylistic variables section.
 
@@ -29,15 +28,36 @@ line = '____________________'
 
 #End stylistic variables section.
 
-
 #Begin function definition section.
 
 class o:
     pass
 
+#19.0821 -- new function 'func()'.
+#'func()' is the prototype of the scraping portion for Wishing Well.
+#'func()' will be updated in the future and incorporated into Wishing Well.
+
+def func():
+	a = input('Enter your URL (include "www":  ')
+	b = requests.get(f'https://{a}')
+	c = html.fromstring(b.content)
+	d = input('Enter HTML part name:  ')
+	e = input('Enter class name:  ')
+	f = c.xpath(f'//{d}[@class="{e}"]/text()')
+	print(f)
+
+#End of comment portion for func().
+
+
 def title():
     print(f'{n}* Wishing Well *{n}')
     time.sleep(1)
+
+
+
+#19.0821:  Note:  Consider defining an 'export' function that exports specified data as CSV files, etc.
+
+
 
 def main():
     while running:
@@ -55,6 +75,7 @@ def main():
             print(f'{n*5}ROBOTS.TXT PRE-CHECK.{n}{line}{n*5}{result}{n*2}{line}{n*2}')
             c = input('Continue?  ')
             if c == 'y':
+                #Consider putting func() here.
                 pass
             elif c == 'n':
                 pass
@@ -67,7 +88,6 @@ def main():
 #Thought:  use the 'try' function for the robots.txt request function.
 
 #End function definition section.
-
 
 #Begin main().
 

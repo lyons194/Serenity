@@ -37,6 +37,9 @@ class o:
 #'func()' is the prototype of the scraping portion for Wishing Well.
 #'func()' will be updated in the future and incorporated into Wishing Well.
 
+
+
+#Remember to change func()'s variable names so that they don't clash with main()'s variable names.
 def func():
 	a = input('Enter your URL (include "www":  ')
 	b = requests.get(f'https://{a}')
@@ -45,6 +48,9 @@ def func():
 	e = input('Enter class name:  ')
 	f = c.xpath(f'//{d}[@class="{e}"]/text()')
 	print(f)
+#Remember to change func()'s variable names so that they don't clash with main()'s variable names.
+
+
 
 #End of comment portion for func().
 

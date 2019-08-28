@@ -4,113 +4,7 @@
 #LAST UPDATED:  August 21, 2019.
 
 
-#Begin import modules section.
-
-from bs4 import BeautifulSoup
-import requests
-from lxml import html
-import time
-#Be sure to set up a virtual environment during the set up.  Import virtualenv?
-
-#End import modules section.
-
-#Begin functional variables section.
-
-running = True
-
-#Begin functional variables section.
-
-#Begin stylistic variables section.
-
-n = '\n'
-s = '     '
-line = '____________________'
-
-#End stylistic variables section.
-
-#Begin function definition section.
-
-class o:
-    pass
-
-#19.0821 -- new function 'func()'.
-#'func()' is the prototype of the scraping portion for Wishing Well.
-#'func()' will be updated in the future and incorporated into Wishing Well.
-
-
-
-#Remember to change func()'s variable names so that they don't clash with main()'s variable names.
-def func():
-	a = input('Enter your URL (include "www":  ')
-	b = requests.get(f'https://{a}')
-	c = html.fromstring(b.content)
-	d = input('Enter HTML part name:  ')
-	e = input('Enter class name:  ')
-	f = c.xpath(f'//{d}[@class="{e}"]/text()')
-	print(f)
-#Remember to change func()'s variable names so that they don't clash with main()'s variable names.
-
-
-
-#End of comment portion for func().
-
-
-def title():
-    print(f'{n}* Wishing Well *{n}')
-    time.sleep(1)
-
-
-
-#19.0821:  Note:  Consider defining an 'export' function that exports specified data as CSV files, etc.
-
-
-
-def main():
-    while running:
-        print(f'{n}WEB SCRAPER{n}')
-        time.sleep(1)
-        a = input('Scrape?  ')
-        if a == 'y':
-            time.sleep(1)
-            print(f'{n}{n}')
-            b = input(f'Please enter your URL below.{n*2}URL:  ')
-            re = requests.get(f'https://{b}/robots.txt')
-            data = re.text
-            soup = BeautifulSoup(data, features='lxml')
-            result = soup.find_all
-            print(f'{n*5}ROBOTS.TXT PRE-CHECK.{n}{line}{n*5}{result}{n*2}{line}{n*2}')
-            c = input('Continue?  ')
-            if c == 'y':
-                #Consider putting func() here.
-                pass
-            elif c == 'n':
-                pass
-        elif a == 'n':
-            time.sleep(1)
-            break
-        elif a == 'exit':
-            quit()
-
-#Thought:  use the 'try' function for the robots.txt request function.
-
-#End function definition section.
-
-#Begin main().
-
-if __name__ == '__main__':
-    title()
-    main()
-
-#End main()
-
-
-
-
-
-
-#Web scraping program
-
-#Import modules
+#Import modules.
 
 from bs4 import BeautifulSoup
 import requests
@@ -118,15 +12,18 @@ import time
 from lxml import html
 #Be sure to set up a virtual environment during the set up.  Import virtualenv?
 
-#Functional variables
+
+#Functional variables.
 running = True
 
-#stylistic variables
+
+#Stylistic variables.
 
 n = '\n'
 s = '     '
 line = '____________________'
 dots = f'.{n}.{n}.{n}.{n}.'
+
 
 class o:
     pass
@@ -165,11 +62,17 @@ def main():
             print(b)
             check = input('Is this URL accurate? ')
             if check == 'y':
+	    	#
+		#Robots.txt pre-check section.
+		#
                 re = requests.get(f'{b}/robots.txt')
                 data = re.text
                 soup = BeautifulSoup(data, features='lxml')
                 result = soup.find_all
                 print(f'{n*5}ROBOTS.TXT PRE-CHECK.{n}{line}{n*5}{result}{n*2}{line}{n*2}')
+		#
+		#End of robots.txt pre-check section.
+		#
                 c = input('Continue? ')
                 if c == 'y':
                     time.sleep(1)

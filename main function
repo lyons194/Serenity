@@ -1,7 +1,7 @@
 #NAME: Wishing Well - a web scraping program. 
 #LANGUAGE:  Python
 #CREATED BY: Sean Lyons
-#LAST UPDATED:  August 21, 2019.
+#LAST UPDATED:  August 28, 2019.
 
 
 #Import modules.
@@ -24,7 +24,7 @@ s = '     '
 line = '____________________'
 dots = f'.{n}.{n}.{n}.{n}.'
 
-
+#This class define a new data type, which will combine the each datum with a time stamp.
 class o:
     pass
 

@@ -4,99 +4,6 @@
 #LAST UPDATED:  August 28, 2019.
 
 
-#Import modules.
-
-from bs4 import BeautifulSoup
-import requests
-import time
-from lxml import html
-#Be sure to set up a virtual environment during the set up.  Import virtualenv?
-
-
-#Functional variables.
-running = True
-
-
-#Stylistic variables.
-
-n = '\n'
-s = '     '
-line = '____________________'
-dots = f'.{n}.{n}.{n}.{n}.'
-
-#This class define a new data type, which will combine the each datum with a time stamp.
-class o:
-    pass
-
-def title():
-    time.sleep(1)
-    print(f'{n*2}* Wishing Well *{n*2}')
-    time.sleep(1)
-
-def func():
-    var_a = input('Please enter the page URL: ')
-    var_b = requests.get(f'{var_a}')
-    var_c = html.fromstring(var_b.content)
-    var_d = input('Enter HTML variable type: ')
-    var_e = input('Enter class name: ')
-    var_f = var_c.xpath(f'//{var_d}[@class="{var_e}"]/text()')
-    print(var_f)
-
-#Help function prototype.  To be defined.
-def help_menu():
-    pass
-
-#Export function prototype.  To be defined.
-def export():
-    pass
-
-def main():
-    while running:
-        print(f'{n*2}WEB SCRAPER{n*2}')
-        time.sleep(1)
-        menu = input(f'MAIN MENU:{n*3}**For help, enter "help".{n*3}Please enter a command:  ')
-        if menu == 'scrape':
-            time.sleep(1)
-            print(f'{n*2}')
-            b = input(f'Please enter your full URL below.{n*2}URL: ')
-            print(b)
-            check = input('Is this URL accurate? ')
-            if check == 'y':
-	    	#
-		#Robots.txt pre-check section.
-		#
-                re = requests.get(f'{b}/robots.txt')
-                data = re.text
-                soup = BeautifulSoup(data, features='lxml')
-                result = soup.find_all
-                print(f'{n*5}ROBOTS.TXT PRE-CHECK.{n}{line}{n*5}{result}{n*2}{line}{n*2}')
-		#
-		#End of robots.txt pre-check section.
-		#
-                c = input('Continue? ')
-                if c == 'y':
-                    time.sleep(1)
-                    print(f'{n*2}OK!')
-                    func()
-                elif c == 'n':
-                    pass
-            elif check == 'n':
-                pass
-        elif menu == 'export':
-            export()
-        elif menu == 'help':
-            help_menu()
-        elif menu == 'exit':
-            quit()
-
-#Thought:  use the 'try' function for the robots.txt request function.
-
-if __name__ == '__main__':
-    title()
-    main()
-
-
-
 #Import modules
 
 from bs4 import BeautifulSoup
@@ -106,7 +13,9 @@ from lxml import html
 #Be sure to set up a virtual environment during the set up.  Import virtualenv?
 
 #Functional variables
+
 running = True
+
 
 #stylistic variables
 
@@ -117,6 +26,7 @@ dots = f'.{n}.{n}.{n}.{n}.'
 
 class o:
     pass
+
 
 #Internal variables section.
 

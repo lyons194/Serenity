@@ -124,3 +124,138 @@ def main():
 if __name__ == '__main__':
     title()
     main()
+
+
+
+
+#Import modules
+
+from bs4 import BeautifulSoup
+import requests
+import time
+from lxml import html
+#Be sure to set up a virtual environment during the set up.  Import virtualenv?
+
+#Functional variables
+running = True
+chron_memory = []
+
+#stylistic variables
+
+n = '\n'
+s = '     '
+line = '____________________'
+dots = f'.{n}.{n}.{n}.{n}.'
+
+class collect:
+    pass
+
+#Internal variables section.
+
+def title():
+    time.sleep(1)
+    print(f'{n*3}{line*2}{n*2}WISHING WELL{n*2}{line*2}{n*3}')
+    time.sleep(1)
+
+def func():
+    #Not yet using 'collect' but may use it in the future.
+    collect = []
+    var_a = input('Please enter the page URL: ')
+    var_b = requests.get(f'{var_a}')
+    var_c = html.fromstring(var_b.content)
+    var_d = input('Enter HTML variable type: ')
+    var_e = input('Enter class name: ')
+    var_f = var_c.xpath(f'//{var_d}[@class="{var_e}"]/text()')
+    chron_memory.append(f'|URL:  {var_a} |')
+    chron_memory.append(f'|HTML:  {var_d} |')
+    chron_memory.append(f'|Class:   {var_e} |')
+    for item in enumerate(var_f):
+        pkg = tuple(item)
+        print(pkg)
+        chron_memory.append(pkg)
+    chron_memory.append(collect)
+    chron_memory.append(collect)
+    chron_memory.append(collect)
+    chron_memory.append(collect)
+    chron_memory.append(collect)
+
+#User-interactive variables section.
+
+#Bank function prototype.  To be defined.  Used to view stored data.
+
+def bank():
+    #Serial_collect is a list that collects all data in a serialized manner, regardless of batch.
+    serial_collect = []
+    #Batch_collect compiles each scraping session as a batch and stores that data in dictionary form.
+    batch_collect = {}
+    print(f'{n*3}{line*2}{n*2}YOUR STORED DATA:{n*2}{line*2}{n*3}')
+    for item in enumerate(chron_memory):
+        print(item)
+
+#Help function prototype.  To be defined.  Used to access help menu.
+
+def help_menu():
+    help_list = ['bank', 'exit', 'export', 'help', 'scrape']
+    print(f'{n*3}{line*2}{n*2}HELP MENU:{n*2}{line*2}{n*3}')
+    for item in enumerate(help_list):
+        print(f'{n}{item}')
+    help_select = input(f'{n*2}Please enter the keyword you need help with:{n*2}Keyword = ')
+    if help_select == 'bank':
+        pass
+    elif help_select == 'exit':
+        pass
+    elif help_select == 'export':
+        pass
+    elif help_select == 'help':
+        pass
+    elif help_select == 'scrape':
+        pass
+        
+#Export function prototype.  To be defined.
+
+def export():
+    print(f'{n*3}{line*2}{n*2}EXPORT MENU:{n*2}{line*2}{n*3}')
+
+#Defining the main() function.
+
+def main():
+    batch_counter = 0
+    while running:
+        time.sleep(1)
+        menu = input(f'MAIN MENU:{n*3}**For help, enter "help".{n*3}Please enter a command:  ')
+        if menu == 'scrape':
+            time.sleep(1)
+            print(f'{n*2}')
+            b = input(f'Please enter your full URL below.{n*2}URL: ')
+            print(b)
+            check = input('Is this URL accurate? ')
+            if check == 'y':
+                re = requests.get(f'{b}/robots.txt')
+                data = re.text
+                soup = BeautifulSoup(data, features='lxml')
+                result = soup.find_all
+                print(f'{n*5}ROBOTS.TXT PRE-CHECK.{n}{line}{n*5}{result}{n*2}{line}{n*2}')
+                c = input('Continue? ')
+                if c == 'y':
+                    time.sleep(1)
+                    print(f'{n*2}OK!')
+                    batch_counter += 1
+                    func()
+                elif c == 'n':
+                    pass
+            elif check == 'n':
+                pass
+        elif menu == 'export':
+            export()
+        elif menu == 'help':
+            help_menu()
+        elif menu == 'bank':
+            bank()
+        elif menu == 'exit':
+            quit()
+
+#Thought:  use the 'try' function for the robots.txt request function.
+
+if __name__ == '__main__':
+    title()
+    main()

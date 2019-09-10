@@ -62,11 +62,11 @@ def func():
         pkg = tuple(item)
         print(pkg)
         chron_memory.append(pkg)
-    chron_memory.append(collect)
-    chron_memory.append(collect)
-    chron_memory.append(collect)
-    chron_memory.append(collect)
-    chron_memory.append(collect)
+    chron_memory.append(' ')
+    chron_memory.append(' ')
+    chron_memory.append(' ')
+    chron_memory.append(' ')
+    chron_memory.append(' ')
     #
     #End organizational functions.
     #
@@ -93,11 +93,11 @@ def func_timed(x,y):
             print(ft_pkg)
             chron_memory.append(ft_pkg)
         clock = time.sleep(x)
-        chron_memory.append(ft_collect)
-        chron_memory.append(ft_collect)
-        chron_memory.append(ft_collect)
-        chron_memory.append(ft_collect)
-        chron_memory.append(ft_collect)
+        chron_memory.append(' ')
+        chron_memory.append(' ')
+        chron_memory.append(' ')
+        chron_memory.append(' ')
+        chron_memory.append(' ')
         starter += 1
         if starter == y:
             print(f'{n*2}End of reoccurring web scraping session.{n*2}')

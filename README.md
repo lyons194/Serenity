@@ -1,2 +1,2 @@
-# Wishing-Well
-A web scraping program.
+# Web Scraper
+A GUI-oriented, easy-to-use data mining program coded in Python.

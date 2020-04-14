@@ -8,12 +8,9 @@ Email: slyons494@gmail.com
 
 """
 
-
 """
 
 Import modules section.
-
-
 
 """
 
@@ -30,41 +27,31 @@ from openpyxl.utils import FORMULAE
 from openpyxl.styles import colors
 from openpyxl.styles import Font, Color
 
+"""
 
+Define tkinter functions.
 
-
-
-
+"""
 
 root = Tk()
 root.wm_title("Web Scraper")
 root.geometry("500x300")
 root.resizable(False,False)
 
-
-
-
 """
 
 Define web-scraping functions.
 Define memory functions.
-
 
 """
 
 memory = {1:"blue"}
 chron_memory = []
 
-
-
-
-
-#20.0329: This class will be used to process data batches.  Batches will then be stored in memory.
 class data_batch:
     def __init__(self, date, collection):
         data_batch.date = date
         data_batch.collection = collection
-
 
 def wunga():
     print(1)
@@ -87,22 +74,17 @@ def robots_txt(x):
     #print(a)
     print(b)
 
-
 def b3_callback():
     wunga()
 
 def b4_callback():
     wunga()
 
-
-
 """
 
 Define GUI variables.
 
-
 """
-
 
 def report_window():
     rw_window = Toplevel()
@@ -124,7 +106,6 @@ def repeat_scrape_window():
     rs_b = Button(rs_window, text="yum", width=10,command=rs_callback)
     rs_b.place(x=30,y=100)
 
-
 def about_window():
     a_window = Toplevel()
     a_window.geometry("300x200")
@@ -144,9 +125,6 @@ def create_window():
     window = Toplevel()
     window.geometry("500x350")
     window.resizable(False,False)
-
-
-
 
 menu = Menu(root)
 root.config(menu=menu)
@@ -171,8 +149,6 @@ help_menu.add_command(label="About", command=about_window)
 help_menu.add_command(label="FAQ", command=faq_window)
 menu.add_cascade(label="Help", menu=help_menu)
 
-
-
 e1 = Entry(root)
 e1.place(x=180,y=30)
 
@@ -184,7 +160,6 @@ def b1_callback():
 
 b1 = Button(root, text="Robots.txt", width=15,command=b1_callback,activebackground="pink", activeforeground="blue")
 b1.place(x=20,y=30)
-
 
 e3 = Entry(root)
 e3.place(x=180,y=100)
@@ -198,7 +173,6 @@ def b2_callback():
 b2 = Button(root, text="Set Page", width=15,command=b2_callback,activebackground="pink", activeforeground="blue")
 b2.place(x=20,y=100)
 
-
 e5 = Entry(root)
 e5.place(x=180,y=170)
 
@@ -210,7 +184,6 @@ def b3_callback():
 
 b3 = Button(root, text="HTML Variable", width=15,command=b3_callback,activebackground="pink", activeforeground="blue")
 b3.place(x=20,y=170)
-
 
 e7 = Entry(root)
 e7.place(x=180,y=240)
@@ -224,14 +197,14 @@ def b4_callback():
 b4 = Button(root, text="Variable Title", width=15,command=b4_callback,activebackground="pink", activeforeground="blue")
 b4.place(x=20,y=240)
 
-
-
 notice1 = Label(root, text="Wishing Well Computing")
 notice1.place(x=10,y=280)
 
+"""
 
+Program launch section.
 
-#Program launch section.
+"""
 
 if __name__ == "__main__":
     root.mainloop()

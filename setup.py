@@ -9,9 +9,9 @@ setup(
     url="https://github.com/lyons194",
     author="Sean Lyons",
     author_email="slyons494@gmail.com",
-    license="MIT",
+    license="GNU General Public License v3.0",
     classifiers=[
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GNU General Public License v3.0",
         "Programming Lanuage :: Python",
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",

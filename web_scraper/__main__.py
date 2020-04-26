@@ -1,7 +1,7 @@
 """
 
 Verison: 0.0.1
-Release Date:
+Release Date: April 26, 2020.
 Language:  Python
 Author:  Sean Lyons
 Email: slyons494@gmail.com
@@ -312,13 +312,3 @@ notice1.place(x=10,y=260)
 
 def main():
     root.mainloop()
-
-
-"""
-20.0424:
-
-if __name__ == "__main__":
-    root.mainloop()
-
-
-"""

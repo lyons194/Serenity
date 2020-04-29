@@ -357,17 +357,6 @@ notice1.place(x=10,y=260)
 
 #Program launch section.
 
-"""
-
 
 def main():
-    root.mainloop()
-
-
-"""
-
-
-#20.0424:
-
-if __name__ == "__main__":
     root.mainloop()

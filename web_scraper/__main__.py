@@ -229,15 +229,6 @@ Define menu bar functions.
 
 """
 
-def 
-
-
-
-
-
-
-
-
 
 def create_txt():
     wunga()

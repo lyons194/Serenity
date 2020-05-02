@@ -24,12 +24,9 @@ from tkinter import *
 from lxml import html
 import os
 from openpyxl import *
-#may replace modules below with -> from openpyxl import *
-#from openpyxl import Workbook
-#from openpyxl import load_workbook
-#from openpyxl.utils import FORMULAE
-#from openpyxl.styles import colors
-#from openpyxl.styles import Font, Color
+from openpyxl.utils import FORMULAE
+from openpyxl.styles import colors
+from openpyxl.styles import Font, Color
 
 
 """
@@ -221,8 +218,6 @@ def scrape_data():
 
 """
 
-
-
 """
 
 Define menu bar functions.
@@ -344,9 +339,6 @@ b4.place(x=20,y=230)
 
 notice1 = Label(root, text="Wishing Well Computing")
 notice1.place(x=10,y=260)
-
-
-#Program launch section.
 
 
 def main():

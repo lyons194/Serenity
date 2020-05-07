@@ -18,7 +18,6 @@ setup(
     ],
     packages=["web_scraper"],
     include_package_date=True,
-    install_reqires=["requests","beautifulsoup4"
-    ]
+    install_reqires=["requests","beautifulsoup4","time","contextlib","tkinter","lxml","os","openpyxl"]
     entry_points={"web_scraper": ["web_scraper.__main__:main"]},
 )

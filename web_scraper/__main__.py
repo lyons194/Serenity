@@ -1,18 +1,9 @@
 """
-
 Verison: 0.0.1
 Release Date:
 Language:  Python
 Author:  Sean Lyons
 Email: slyons494@gmail.com
-
-"""
-
-
-"""
-
-Import modules section.
-
 """
 
 from bs4 import BeautifulSoup
@@ -28,13 +19,11 @@ from openpyxl.utils import FORMULAE
 from openpyxl.styles import colors
 from openpyxl.styles import Font, Color
 
-
 """
 
 Define memory functions.
 
 """
-
 
 input_memory = {"robots.txt_accepted" : None,
                 "URL" : None,
@@ -57,13 +46,11 @@ class data_batch:
         data_batch.date = date
         data_batch.collection = collection
 
-
 """
 
 Define tkinter variables.
 
 """
-
 
 root = Tk()
 root.wm_title("Web Scraper")
@@ -98,7 +85,6 @@ e7.place(x=160,y=230)
 e8 = Entry(root)
 e8.place(x=320,y=230)
 
-
 """
 
 Notice windows.
@@ -111,13 +97,11 @@ class robots_window:
         self.window.geometry("400x600")
         self.window.resizable(False,False)
 
-
 """
 
 Define functions for entry boxes.
 
 """
-
 
 def wunga():
     print(1)
@@ -172,13 +156,11 @@ def variable_class():
     except:
         e8.insert(0, "an error occurred")
 
-
 """
 
 Define data mining variables.
 
 """
-
 
 def valid_response(resp):
     content_type = resp.headers['Content-Type'.lower()]
@@ -201,29 +183,11 @@ def retrieve(url):
         log_error('Error during requests to {0} : {1}'.format(url, str(e)))
         return None
 
-
-"""
-
-20.0428: Previous verison of scraping function.
-
-def scrape_data():
-    try:
-        sd_a = requests.get(f'{set_page_memory["URL"]}')
-        sd_b = html.fromstring(sd_a.content)
-        sd_c = sd_b.xpath(f'//{html_variable_memory}[@class="{variable_class_memory}"]/text()')
-        for item in enumerate(sd_c):
-            print(item)
-    except:
-        print("An error occurred.")
-
-"""
-
 """
 
 Define menu bar functions.
 
 """
-
 
 def create_txt():
     wunga()
@@ -237,13 +201,11 @@ def create_xlsx():
 def clear_cache():
     data_batch_memory.clear()
 
-
 """
 
 Define GUI variables.
 
 """
-
 
 def report_window():
     rw_window = Toplevel()
@@ -317,13 +279,11 @@ help_menu.add_command(label="About", command=about_window)
 help_menu.add_command(label="FAQ", command=faq_window)
 menu.add_cascade(label="Help", menu=help_menu)
 
-
 """
 
 Define tkinter button functions.
 
 """
-
 
 b1 = Button(root, text="Find robots.txt", width=15,command=robots,activebackground="pink", activeforeground="blue")
 b1.place(x=20,y=20)
@@ -339,7 +299,6 @@ b4.place(x=20,y=230)
 
 notice1 = Label(root, text="Wishing Well Computing")
 notice1.place(x=10,y=260)
-
 
 def main():
     root.mainloop()

@@ -70,7 +70,7 @@ Define tkinter variables.
 
 
 root = Tk()
-root.wm_title("Web Scraper")
+root.wm_title("Serenity - Web Scraper")
 root.geometry("475x160")
 root.resizable(False,False)
 

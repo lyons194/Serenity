@@ -1,4 +1,4 @@
-# Serenity
+# Wishing Well
 A GUI-oriented, easy-to-use data mining program coded in Python.
 
 Download:
